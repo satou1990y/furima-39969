@@ -42,7 +42,7 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address.errors.full_messages).to include("Postcode is invalid. Include hyphen(-)")
       end
       it 'prefecture_idは選択していないと保存できないこと' do
-        @purchase_address.prefecture_id = ''
+        @purchase_address.prefecture_id = 1
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Prefecture can't be blank")
       end
@@ -72,7 +72,7 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address.errors.full_messages).to include("Phone number is invalid")
       end
       it 'phone_numberは9桁以下だと保存できないこと' do
-        @purchase_address.phone_number = '090123456789'
+        @purchase_address.phone_number = '090123456'
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Phone number is invalid")
       end
