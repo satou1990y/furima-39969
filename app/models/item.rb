@@ -18,4 +18,5 @@ class Item < ApplicationRecord
 
   validates :category_id, :status_id, :charge_id, :prefecture_id, :period_id,
             numericality: { other_than: 1, message: "can't be blank" }
+            
 end
