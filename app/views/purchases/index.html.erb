@@ -1,3 +1,5 @@
+<%= include_gon %>
+
 <%= render "shared/second-header"%>
 
 <div class='transaction-contents'>
@@ -31,7 +33,7 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with model: @purchase_address, url:item_purchases_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @purchase_address, url:item_purchases_path, data: { turbo: false }, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 

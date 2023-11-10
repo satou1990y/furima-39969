@@ -7,4 +7,6 @@ class Purchase < ApplicationRecord
     validates :item_id
     validates :user_id
   end
+
+  attr_accessor :token
 end
